@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Role Selection Modal -->
+    <div id="roleModal" class="modal show">
+        <div class="modal-content">
+            <h2>Welcome to Supreme Chainsaw</h2>
+            <p>Are you a Client looking to hire editors, or an Editor seeking opportunities?</p>
+            <div class="role-buttons">
+                <button class="role-btn" onclick="setRole('client')">👤 I'm a Client</button>
+                <button class="role-btn" onclick="setRole('editor')">✂️ I'm an Editor</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -38,7 +50,10 @@
         <div class="hero-content">
             <h1 class="hero-title">Transforming Raw Footage into Cinematic Stories</h1>
             <p class="hero-subtitle">Professional video editing for anime, gaming, and commercial content. Elevate your visuals with cinematic precision and storytelling that captivates audiences.</p>
-            <a href="#contact" class="hero-btn">Start Your Project</a>
+            <div class="hero-buttons">
+                <a href="#contact" class="hero-btn">Start Your Project</a>
+                <a href="#portfolio" class="hero-btn-secondary">View Portfolio</a>
+            </div>
         </div>
         <div class="hero-background"></div>
     </section>
@@ -52,57 +67,75 @@
                 <!-- Video 1 -->
                 <div class="portfolio-card">
                     <div class="video-container">
-                        <iframe src="https://drive.google.com/file/d/1V5IKXDcY2rtLjKMuX2F72foCGFkq0tD9/preview" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+                        <video controls>
+                            <source src="$20vs$200 - Ashutosh Sharma (1).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="portfolio-overlay">
-                        <span class="portfolio-tag">Anime Edit</span>
+                        <span class="portfolio-tag">Content Edit</span>
                     </div>
                 </div>
 
                 <!-- Video 2 -->
                 <div class="portfolio-card">
                     <div class="video-container">
-                        <iframe src="https://drive.google.com/file/d/13eKG_f6e-HXJkwnPjJJCrOP2taF83oT8/preview" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+                        <video controls>
+                            <source src="sample 3 (1).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="portfolio-overlay">
-                        <span class="portfolio-tag">Gaming Showcase</span>
+                        <span class="portfolio-tag">Professional Edit</span>
                     </div>
                 </div>
 
-                <!-- Video 3 -->
+                <!-- Video 3 - Placeholder -->
                 <div class="portfolio-card">
                     <div class="video-container">
-                        <iframe src="https://drive.google.com/file/d/1YdHnQODpO-LuDtakhyX-2SdhcYG2d1j7/preview" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+                        <video controls>
+                            <source src="sample 3 (1).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-tag">Motion Graphics</span>
                     </div>
                 </div>
 
-                <!-- Video 4 -->
+                <!-- Video 4 - Placeholder -->
                 <div class="portfolio-card">
                     <div class="video-container">
-                        <iframe src="https://drive.google.com/file/d/1ntwWktKUb4_PJusTxA7Uwc0GDp00vkzZ/preview" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+                        <video controls>
+                            <source src="$20vs$200 - Ashutosh Sharma (1).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-tag">Promotional Video</span>
                     </div>
                 </div>
 
-                <!-- Video 5 -->
+                <!-- Video 5 - Placeholder -->
                 <div class="portfolio-card">
                     <div class="video-container">
-                        <iframe src="https://drive.google.com/file/d/11k6KNyMdWhZDJUVJnIWzUBxwCnDU18-9/preview" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+                        <video controls>
+                            <source src="sample 3 (1).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-tag">Short-form Content</span>
                     </div>
                 </div>
 
-                <!-- Video 6 -->
+                <!-- Video 6 - Placeholder -->
                 <div class="portfolio-card">
                     <div class="video-container">
-                        <iframe src="https://drive.google.com/file/d/1d5d6Zo_of7RjDFx-_GGf00JJ3JytZkZ0/preview" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+                        <video controls>
+                            <source src="$20vs$200 - Ashutosh Sharma (1).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-tag">Color Grading</span>
@@ -300,9 +333,10 @@
             <h2 class="section-title">Get in Touch</h2>
             <p class="section-subtitle">Ready to start your project? Let's create something amazing together.</p>
             <div class="contact-wrapper">
-                <!-- Contact Form -->
-                <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
+                <!-- Client Contact Form -->
+                <div id="clientForm" class="contact-form-container" style="display: none;">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 1.5rem;">💼 For Clients</h3>
+                    <form id="contactFormClient" class="contact-form">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -321,6 +355,7 @@
                                 <option value="color-grading">Color Grading & Sound Design</option>
                                 <option value="anime">Anime Editing</option>
                                 <option value="gaming">Gaming Montages</option>
+                                <option value="commercial">Commercial/Promotional</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
@@ -341,9 +376,65 @@
                         <button type="submit" class="submit-btn">Send Message</button>
                         <p class="form-message" id="formMessage"></p>
                     </form>
+                    <button class="hero-btn-secondary" onclick="changeRole()" style="width: 100%; margin-top: 1rem;">Switch to Editor Form</button>
                 </div>
 
-                <!-- Contact Quick Links -->
+                <!-- Editor Contact Form -->
+                <div id="editorForm" class="contact-form-container" style="display: none;">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 1.5rem;">✂️ For Editors</h3>
+                    <form id="contactFormEditor" class="contact-form">
+                        <div class="form-group">
+                            <label for="editorName">Full Name</label>
+                            <input type="text" id="editorName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editorEmail">Email Address</label>
+                            <input type="email" id="editorEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Years of Experience</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">Select experience level</option>
+                                <option value="0-1">0-1 years</option>
+                                <option value="1-3">1-3 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="5+">5+ years</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="expertise">Areas of Expertise</label>
+                            <select id="expertise" name="expertise" required>
+                                <option value="">Select your specialty</option>
+                                <option value="anime">Anime Editing</option>
+                                <option value="gaming">Gaming Montages</option>
+                                <option value="motion">Motion Graphics & VFX</option>
+                                <option value="color">Color Grading</option>
+                                <option value="sound">Sound Design</option>
+                                <option value="youtube">YouTube Content</option>
+                                <option value="short-form">Short-form (Reels/Shorts)</option>
+                                <option value="commercial">Commercial/Promotional</option>
+                                <option value="other">Other/Multiple</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="software">Editing Software Proficiency</label>
+                            <input type="text" id="software" name="software" placeholder="e.g., Adobe Premiere, DaVinci Resolve, Final Cut Pro" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editorMessage">Tell us about yourself and why you'd like to join our team</label>
+                            <textarea id="editorMessage" name="message" rows="5" placeholder="Share your experience, portfolio link, and what excites you about video editing..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="portfolio">Portfolio / Reel Link (Optional)</label>
+                            <input type="url" id="portfolio" name="portfolio" placeholder="https://your-portfolio.com">
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Application</button>
+                        <p class="form-message" id="formMessageEditor"></p>
+                    </form>
+                    <button class="hero-btn-secondary" onclick="changeRole()" style="width: 100%; margin-top: 1rem;">Switch to Client Form</button>
+                </div>
+
+                <!-- Benefits Section -->
                 <div class="contact-quick">
                     <h3>Why Choose Us?</h3>
                     <ul class="benefits-list">
