@@ -7,18 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Role Selection Modal -->
-    <div id="roleModal" class="modal show">
-        <div class="modal-content">
-            <h2>Welcome to Supreme Chainsaw</h2>
-            <p>Are you a Client looking to hire editors, or an Editor seeking opportunities?</p>
-            <div class="role-buttons">
-                <button class="role-btn" onclick="setRole('client')">👤 I'm a Client</button>
-                <button class="role-btn" onclick="setRole('editor')">✂️ I'm an Editor</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -27,16 +15,9 @@
                 <span class="logo-text">Supreme Chainsaw</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#process" class="nav-link">Process</a></li>
-                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <a href="#contact" class="cta-button">Get in Touch</a>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -45,256 +26,29 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Role Selection -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">Transforming Raw Footage into Cinematic Stories</h1>
-            <p class="hero-subtitle">Professional video editing for anime, gaming, and commercial content. Elevate your visuals with cinematic precision and storytelling that captivates audiences.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="hero-btn">Start Your Project</a>
-                <a href="#portfolio" class="hero-btn-secondary">View Portfolio</a>
+            <h1 class="hero-title">Welcome to Supreme Chainsaw</h1>
+            <p class="hero-subtitle">Choose your path and join our creative community</p>
+            
+            <div class="role-selection-container">
+                <div class="role-card" onclick="goToPage('client')">
+                    <div class="role-icon">👤</div>
+                    <h2>I'm a Client</h2>
+                    <p>Looking for professional video editing services? Let's bring your vision to life.</p>
+                    <button class="role-btn-large">Hire an Editor</button>
+                </div>
+
+                <div class="role-card" onclick="goToPage('editor')">
+                    <div class="role-icon">✂️</div>
+                    <h2>I'm an Editor</h2>
+                    <p>Ready to showcase your skills and join our talented team of video professionals?</p>
+                    <button class="role-btn-large">Apply Now</button>
+                </div>
             </div>
         </div>
         <div class="hero-background"></div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="section-title">Our Portfolio</h2>
-            <p class="section-subtitle">Showcasing our finest video editing work across multiple genres and platforms</p>
-            <div class="portfolio-grid">
-                <!-- Video 1 -->
-                <div class="portfolio-card">
-                    <div class="video-container">
-                        <video controls>
-                            <source src="$20vs$200 - Ashutosh Sharma (1).mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-tag">Content Edit</span>
-                    </div>
-                </div>
-
-                <!-- Video 2 -->
-                <div class="portfolio-card">
-                    <div class="video-container">
-                        <video controls>
-                            <source src="sample 3 (1).mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-tag">Professional Edit</span>
-                    </div>
-                </div>
-
-                <!-- Video 3 - Placeholder -->
-                <div class="portfolio-card">
-                    <div class="video-container">
-                        <video controls>
-                            <source src="sample 3 (1).mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-tag">Motion Graphics</span>
-                    </div>
-                </div>
-
-                <!-- Video 4 - Placeholder -->
-                <div class="portfolio-card">
-                    <div class="video-container">
-                        <video controls>
-                            <source src="$20vs$200 - Ashutosh Sharma (1).mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-tag">Promotional Video</span>
-                    </div>
-                </div>
-
-                <!-- Video 5 - Placeholder -->
-                <div class="portfolio-card">
-                    <div class="video-container">
-                        <video controls>
-                            <source src="sample 3 (1).mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-tag">Short-form Content</span>
-                    </div>
-                </div>
-
-                <!-- Video 6 - Placeholder -->
-                <div class="portfolio-card">
-                    <div class="video-container">
-                        <video controls>
-                            <source src="$20vs$200 - Ashutosh Sharma (1).mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-tag">Color Grading</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">Comprehensive video editing solutions tailored to your creative needs</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📺</div>
-                    <h3>Long-form YouTube Editing</h3>
-                    <p>Professional editing for YouTube videos with strategic pacing, smooth transitions, and compelling storytelling that keeps viewers engaged from start to finish.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3>Short-form Content</h3>
-                    <p>Optimized edits for TikTok, Instagram Reels, and YouTube Shorts designed to maximize engagement, reach, and viral potential with trending transitions and effects.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✨</div>
-                    <h3>Motion Graphics & VFX</h3>
-                    <p>Eye-catching motion graphics, visual effects, and animations that elevate your content to cinema standards with professional-grade visual storytelling.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3>Color Grading & Sound</h3>
-                    <p>Professional color correction, grading, and sound design to ensure a polished, broadcast-quality final product that stands out across all platforms.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section id="process" class="process">
-        <div class="container">
-            <h2 class="section-title">Our Editing Process</h2>
-            <p class="section-subtitle">A proven workflow that delivers exceptional results</p>
-            <div class="process-grid">
-                <div class="process-card">
-                    <div class="process-number">01</div>
-                    <h3>Consultation</h3>
-                    <p>We start by understanding your vision, goals, and target audience. This allows us to tailor our editing approach to match your specific needs and creative direction perfectly.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">02</div>
-                    <h3>Asset Review</h3>
-                    <p>We carefully review all raw footage, audio files, and graphics you provide. We organize and catalog everything to ensure a smooth editing workflow from start to finish.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">03</div>
-                    <h3>Editing & Effects</h3>
-                    <p>Our team applies professional editing techniques, color grading, transitions, and visual effects to transform your raw footage into a polished, engaging final product.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">04</div>
-                    <h3>Sound Design</h3>
-                    <p>We add professional audio editing, sound effects, music synchronization, and mixing to create an immersive audio-visual experience that captivates viewers.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">05</div>
-                    <h3>Quality Review</h3>
-                    <p>Every project undergoes rigorous quality control testing across multiple devices and platforms to ensure optimal playback quality and viewer experience.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">06</div>
-                    <h3>Delivery & Support</h3>
-                    <p>We deliver your final video in your preferred format and resolution. We're here to support any final adjustments or revisions you may need.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Clients Say</h2>
-            <p class="section-subtitle">Real feedback from creators and brands we've worked with</p>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Supreme Chainsaw completely transformed my gaming footage into something truly professional. The editing quality and turnaround time were exceptional!"</p>
-                    <p class="testimonial-author">- Alex M. (Gaming Creator)</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"The anime edit they created had perfect pacing and aesthetic. I've never seen my content look better. Highly recommend their services!"</p>
-                    <p class="testimonial-author">- Jordan T. (Anime Fan Channel)</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Working with this team was a breeze. They understood our brand vision immediately and delivered exactly what we needed. Best investment for our channel!"</p>
-                    <p class="testimonial-author">- Sarah L. (Brand Manager)</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Their motion graphics work is insane. The VFX they added elevated our promotional video to a whole new level. Professional doesn't even begin to describe it."</p>
-                    <p class="testimonial-author">- Marcus P. (Content Creator)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2 class="section-title">Pricing Plans</h2>
-            <p class="section-subtitle">Flexible packages designed for every budget and project scope</p>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Starter</h3>
-                    <div class="price">$300</div>
-                    <p class="price-subtitle">Per Project</p>
-                    <ul class="price-features">
-                        <li>✓ Up to 15 min video</li>
-                        <li>✓ Basic color grading</li>
-                        <li>✓ Transitions & effects</li>
-                        <li>✓ 1 revision round</li>
-                        <li>✓ MP4 & WebM formats</li>
-                    </ul>
-                    <a href="#contact" class="price-btn">Get Started</a>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="featured-badge">POPULAR</div>
-                    <h3>Professional</h3>
-                    <div class="price">$750</div>
-                    <p class="price-subtitle">Per Project</p>
-                    <ul class="price-features">
-                        <li>✓ Up to 30 min video</li>
-                        <li>✓ Advanced color grading</li>
-                        <li>✓ Motion graphics</li>
-                        <li>✓ Sound design</li>
-                        <li>✓ 3 revision rounds</li>
-                        <li>✓ All formats</li>
-                    </ul>
-                    <a href="#contact" class="price-btn">Choose Plan</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Premium</h3>
-                    <div class="price">$1500+</div>
-                    <p class="price-subtitle">Custom Pricing</p>
-                    <ul class="price-features">
-                        <li>✓ Unlimited length</li>
-                        <li>✓ Full VFX suite</li>
-                        <li>✓ Cinematic color grading</li>
-                        <li>✓ Professional mixing</li>
-                        <li>✓ Unlimited revisions</li>
-                        <li>✓ Custom solutions</li>
-                    </ul>
-                    <a href="#contact" class="price-btn">Inquire Now</a>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- About Section -->
@@ -302,9 +56,8 @@
         <div class="container">
             <div class="about-content">
                 <h2 class="section-title">About Supreme Chainsaw</h2>
-                <p>We are a team of passionate video editors and post-production specialists dedicated to transforming your raw footage into compelling visual stories. With expertise across anime editing, gaming montages, commercial content, and everything in between, we bring cinematic excellence to every single project we undertake.</p>
-                <p>Founded on the principles of quality, creativity, and client satisfaction, Supreme Chainsaw has grown to become a trusted partner for creators, brands, and studios worldwide. Our commitment to staying current with the latest editing trends and technologies ensures that your content always stands out in a crowded digital landscape.</p>
-                <p>Our mission is simple: to help creators, brands, and studios achieve their vision through professional-grade video editing and post-production services that exceed expectations and deliver results that matter.</p>
+                <p>We are a team of passionate video editors and post-production specialists dedicated to transforming raw footage into compelling visual stories. With expertise across anime editing, gaming montages, commercial content, and everything in between, we bring cinematic excellence to every project.</p>
+                <p>Founded on the principles of quality, creativity, and collaboration, Supreme Chainsaw has become a trusted partner for creators, brands, and studios worldwide. Whether you're a client looking for top-tier editing services or an editor seeking opportunities to grow your skills, we're here to support your success.</p>
                 <div class="about-stats">
                     <div class="stat">
                         <h3>500+</h3>
@@ -315,170 +68,13 @@
                         <p>Happy Clients</p>
                     </div>
                     <div class="stat">
+                        <h3>50+</h3>
+                        <p>Professional Editors</p>
+                    </div>
+                    <div class="stat">
                         <h3>5+</h3>
                         <p>Years Experience</p>
                     </div>
-                    <div class="stat">
-                        <h3>24/7</h3>
-                        <p>Support Available</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="section-subtitle">Ready to start your project? Let's create something amazing together.</p>
-            <div class="contact-wrapper">
-                <!-- Client Contact Form -->
-                <div id="clientForm" class="contact-form-container" style="display: none;">
-                    <h3 style="color: var(--accent-cyan); margin-bottom: 1.5rem;">💼 For Clients</h3>
-                    <form id="contactFormClient" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="projectType">Project Type</label>
-                            <select id="projectType" name="projectType" required>
-                                <option value="">Select project type</option>
-                                <option value="youtube-editing">YouTube Long-form Editing</option>
-                                <option value="shorts">Short-form Content (Reels/TikTok)</option>
-                                <option value="motion-graphics">Motion Graphics & VFX</option>
-                                <option value="color-grading">Color Grading & Sound Design</option>
-                                <option value="anime">Anime Editing</option>
-                                <option value="gaming">Gaming Montages</option>
-                                <option value="commercial">Commercial/Promotional</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="budget">Budget Range</label>
-                            <select id="budget" name="budget" required>
-                                <option value="">Select budget range</option>
-                                <option value="under-500">Under $500</option>
-                                <option value="500-1000">$500 - $1,000</option>
-                                <option value="1000-2500">$1,000 - $2,500</option>
-                                <option value="2500+">$2,500+</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message / Project Brief</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project, your vision, and what you're hoping to achieve..." required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                        <p class="form-message" id="formMessage"></p>
-                    </form>
-                    <button class="hero-btn-secondary" onclick="changeRole()" style="width: 100%; margin-top: 1rem;">Switch to Editor Form</button>
-                </div>
-
-                <!-- Editor Contact Form -->
-                <div id="editorForm" class="contact-form-container" style="display: none;">
-                    <h3 style="color: var(--accent-cyan); margin-bottom: 1.5rem;">✂️ For Editors</h3>
-                    <form id="contactFormEditor" class="contact-form">
-                        <div class="form-group">
-                            <label for="editorName">Full Name</label>
-                            <input type="text" id="editorName" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="editorEmail">Email Address</label>
-                            <input type="email" id="editorEmail" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="experience">Years of Experience</label>
-                            <select id="experience" name="experience" required>
-                                <option value="">Select experience level</option>
-                                <option value="0-1">0-1 years</option>
-                                <option value="1-3">1-3 years</option>
-                                <option value="3-5">3-5 years</option>
-                                <option value="5+">5+ years</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="expertise">Areas of Expertise</label>
-                            <select id="expertise" name="expertise" required>
-                                <option value="">Select your specialty</option>
-                                <option value="anime">Anime Editing</option>
-                                <option value="gaming">Gaming Montages</option>
-                                <option value="motion">Motion Graphics & VFX</option>
-                                <option value="color">Color Grading</option>
-                                <option value="sound">Sound Design</option>
-                                <option value="youtube">YouTube Content</option>
-                                <option value="short-form">Short-form (Reels/Shorts)</option>
-                                <option value="commercial">Commercial/Promotional</option>
-                                <option value="other">Other/Multiple</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="software">Editing Software Proficiency</label>
-                            <input type="text" id="software" name="software" placeholder="e.g., Adobe Premiere, DaVinci Resolve, Final Cut Pro" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="editorMessage">Tell us about yourself and why you'd like to join our team</label>
-                            <textarea id="editorMessage" name="message" rows="5" placeholder="Share your experience, portfolio link, and what excites you about video editing..." required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="portfolio">Portfolio / Reel Link (Optional)</label>
-                            <input type="url" id="portfolio" name="portfolio" placeholder="https://your-portfolio.com">
-                        </div>
-                        <button type="submit" class="submit-btn">Submit Application</button>
-                        <p class="form-message" id="formMessageEditor"></p>
-                    </form>
-                    <button class="hero-btn-secondary" onclick="changeRole()" style="width: 100%; margin-top: 1rem;">Switch to Client Form</button>
-                </div>
-
-                <!-- Benefits Section -->
-                <div class="contact-quick">
-                    <h3>Why Choose Us?</h3>
-                    <ul class="benefits-list">
-                        <li><span class="checkmark">✓</span> <strong>Fast Turnaround</strong> - Quick delivery without compromising quality</li>
-                        <li><span class="checkmark">✓</span> <strong>Expert Team</strong> - Years of experience in professional video editing</li>
-                        <li><span class="checkmark">✓</span> <strong>Custom Solutions</strong> - Tailored to your unique needs and budget</li>
-                        <li><span class="checkmark">✓</span> <strong>Latest Technology</strong> - State-of-the-art editing software and equipment</li>
-                        <li><span class="checkmark">✓</span> <strong>Unlimited Revisions</strong> - We get it right until you're 100% satisfied</li>
-                        <li><span class="checkmark">✓</span> <strong>Professional Quality</strong> - Broadcast-ready output for all platforms</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle">Answers to common questions about our services</p>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>How long does editing usually take?</h3>
-                    <p>Turnaround time depends on the project length and complexity. Typically, we deliver standard projects within 3-5 business days. Rush services are available for expedited delivery.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What file formats do you accept?</h3>
-                    <p>We accept all major video formats including MP4, MOV, AVI, MKV, and more. We can also work with footage from any camera or device. Raw footage and high-quality sources produce the best results.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Do you provide music and sound effects?</h3>
-                    <p>Yes! We have access to extensive royalty-free music and sound effect libraries. We can license music on your behalf or work with music you already own.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can you add subtitles and captions?</h3>
-                    <p>Absolutely. We provide professional subtitles and captions in any language. Whether for accessibility or engagement, we can style them to match your content perfectly.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What about revisions and changes?</h3>
-                    <p>All our packages include revision rounds. We work with you until you're completely satisfied. Most clients only need 1-2 revision rounds due to our thorough initial consultation.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How do we work together?</h3>
-                    <p>We communicate via email, Discord, or video calls. You can share files through Google Drive, Dropbox, or WeTransfer. We keep you updated throughout the entire editing process.</p>
                 </div>
             </div>
         </div>
@@ -489,12 +85,9 @@
         <div class="footer-content">
             <p>&copy; 2024 Supreme Chainsaw. All rights reserved.</p>
             <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#services">Services</a>
-                <a href="#process">Process</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="client.html">For Clients</a>
+                <a href="editor.html">For Editors</a>
             </div>
         </div>
     </footer>
