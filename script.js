@@ -42,7 +42,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
 
     try {
         // Using Formspree service for email handling
-        const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        const response = await fetch('https://formspree.io/f/mzepnbln', {
             method: 'POST',
             body: formData,
             headers: {
@@ -325,7 +325,6 @@ window.addEventListener('scroll', debounce(function() {
 // ================================================
 
 console.log('%cSupreme Chainsaw Website Loaded', 'color: #00e5ff; font-size: 16px; font-weight: bold;');
-console.log('%cTo setup email functionality:', 'color: #8a2be2; font-weight: bold;');
-console.log('1. Get a free Formspree account at https://formspree.io');
-console.log('2. Replace "YOUR_FORM_ID" in the contact form fetch URL with your actual form ID');
-console.log('3. Or use EmailJS: https://www.emailjs.com/');
+console.log('%c✓ Formspree Email Service ACTIVE', 'color: #00e5ff; font-weight: bold;');
+console.log('Form ID: mzepnbln');
+console.log('All contact form submissions will be sent to your Formspree inbox');
